@@ -21,3 +21,21 @@ function isEqual(A, B) {
 }
 
 console.log(isEqual(A, B));
+
+
+Question 2&3: Use rest countries url and display the country flags, name, region, sub region and population.
+Answer:
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://restcountries.com/v3.1/all' );
+            xhr.responseType = 'json';
+            xhr.send();
+            xhr.onload = function () {
+            var responseObj = xhr.response;
+            console.log(responseObj);
+            for (var i=0; i<= responseObj.length; i++)
+            {console.log("country Flag : " + responseObj[i].flag) ;
+            console.log("Country Name : " + responseObj[i].name) ;
+            console.log(" Region : " + responseObj[i].region) ;
+            console.log("Sub Region : " + responseObj[i].subregion);
+            console.log("Population : " + responseObj[i].population);}
+            } ``
