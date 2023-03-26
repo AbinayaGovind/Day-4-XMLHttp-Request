@@ -1,0 +1,23 @@
+Question : How to compare the two JSON have the same properties without order?
+            a.  let obj1={name:"person1", age:5};
+             b.  let obj1={ age:5, name:"person1"};
+Answer:
+var A = { name: "Apple", age: 5 };
+var B = { age: 5, name: "Apple" };
+console.log(A);
+console.log(B);
+
+function isEqual(A, B) {
+  var AKeys = Object.keys(A);
+  var BKeys = Object.keys(B);
+  
+  if (AKeys.length != BKeys.length) {
+    return false; }
+   for (var AKey of AKeys) {
+    
+    if (A[AKeys] != B[BKeys]) {
+      return false;}}
+    return true;
+}
+
+console.log(isEqual(A, B));
